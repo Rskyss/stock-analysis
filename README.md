@@ -20,6 +20,20 @@
 
 ## 安装
 
+### 前提条件
+
+- Python 3.8+
+- pip 包管理器
+
+### 安装步骤
+
+1. 克隆仓库
+```bash
+git clone https://github.com/Rskyss/stock-analysis.git
+cd stock-analysis
+```
+
+2. 安装依赖
 ```bash
 pip install -r requirements.txt
 ```
@@ -95,6 +109,42 @@ python run.py AAPL MSFT --days 90 --output ./reports --format json --verbose
 - 风险控制阈值
 - 因子权重配置
 
+## 项目结构
+
+```
+stock-analysis/
+├── run.py                  # 主程序入口
+├── requirements.txt        # 项目依赖
+├── README.md               # 项目说明
+├── PRD.md                  # 产品需求文档
+├── 需求.md                 # 详细需求说明
+├── reports/                # 生成的报告目录
+└── stock_analyzer/         # 核心代码模块
+    ├── __init__.py
+    ├── config.py           # 配置文件
+    ├── data_fetcher.py     # 数据获取模块
+    ├── indicators.py       # 指标计算模块
+    ├── logger.py           # 日志模块
+    ├── main.py             # 主分析逻辑
+    ├── models.py           # 多因子模型
+    ├── report_generator.py # 报告生成器
+    ├── risk_metrics.py     # 风险指标计算
+    ├── sentiment_analyzer.py # 情绪分析
+    ├── validators.py       # 数据验证
+    ├── weight_adjuster.py  # 权重调整
+    └── tests/              # 测试目录
+```
+
+## 贡献指南
+
+欢迎贡献代码、报告问题或提出新功能建议。请遵循以下步骤：
+
+1. Fork 本仓库
+2. 创建您的特性分支 (`git checkout -b feature/amazing-feature`)
+3. 提交您的更改 (`git commit -m '添加一些特性'`)
+4. 推送到分支 (`git push origin feature/amazing-feature`)
+5. 开启一个 Pull Request
+
 ## 开发文档
 
 详细开发文档请参考 `PRD.md`。
@@ -103,4 +153,8 @@ python run.py AAPL MSFT --days 90 --output ./reports --format json --verbose
 
 - 本系统仅供研究和学习使用，不构成投资建议
 - 使用免费API可能存在请求限制，建议合理控制请求频率
-- 历史数据不代表未来表现，投资决策需谨慎 
+- 历史数据不代表未来表现，投资决策需谨慎
+
+## 许可证
+
+本项目采用 MIT 许可证 - 详情请参阅 [LICENSE](LICENSE) 文件 
